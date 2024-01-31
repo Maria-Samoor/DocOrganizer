@@ -75,7 +75,9 @@ def user_profile(request):
         user_profile = UserProfile.objects.get(full_name=logged_in_user)
         is_staff_member = user_profile.is_staff
         belongs_to_group2 = logged_in_user.groups.filter(name='Group2').exists()
-        with open('civilregistry.txt', 'r') as file:
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        file_path = os.path.join(BASE_DIR, 'civilregistry.txt')
+        with open(file_path, 'r') as file:
             lines = file.readlines()
             for line in lines:
                 data = line.strip().split(',')
@@ -88,7 +90,7 @@ def user_profile(request):
                         'user_profile': user_profile,
                         'birthdate': birthdate,
                         'is_staff_member': is_staff_member
-                    }   
+                    }
 
         return render(request, 'user/profile.html', context)
 
@@ -197,8 +199,9 @@ def user_info(request):
 
     # Initialize variables to store found data
     found_data = None
-
-    with open('civilregistry.txt', 'r') as file:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_path = os.path.join(BASE_DIR, 'civilregistry.txt')
+    with open(file_path, 'r') as file:
         reader = csv.reader(file)
         for line in reader:
             try:
@@ -212,7 +215,7 @@ def user_info(request):
                 user_info.national_id = national_id
                 birthdate = datetime.strptime(birthdate_str, '%m/%d/%Y')
                 father_name, grandfather_name, family_name, mother_name = map(str.strip, names)
-                
+
                 # Save the found data in the variables
                 found_data = {
                     'birthdate': birthdate,
@@ -304,10 +307,11 @@ def document(request,category_name):
             lines = file.readlines()
             for line in lines:
                 national_id, found_pdf_path = line.strip().split(',')
+                foundpdf_path = os.path.join(BASE_DIR, found_pdf_path.strip())
                 if national_id.strip() == user_national_id:
                     pdf_info_list.append({
-                        'pdf_path': found_pdf_path.strip(),
-                        'pdf_name': os.path.basename(found_pdf_path.strip()).lower()  
+                        'pdf_path': foundpdf_path,
+                        'pdf_name': os.path.basename(found_pdf_path.strip()).lower()
                     })
 
     except FileNotFoundError:
@@ -320,16 +324,17 @@ def document(request,category_name):
 def open_pdf(request, category_name, pdf_name):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     pdf_path = os.path.join(BASE_DIR,"SystemDoc", f"{category_name}.txt")
-
     try:
         with open(pdf_path, 'r') as file:
             lines = file.readlines()
 
             for line in lines:
                 national_id, found_pdf_path = line.strip().split(',')
-                if national_id.strip() == str(request.user.national_id).strip() and pdf_name.lower() == os.path.basename(found_pdf_path.strip()).lower():
-                    if os.path.isfile(found_pdf_path.strip()):
-                        response = FileResponse(open(found_pdf_path.strip(), 'rb'), content_type='application/pdf')
+                if national_id.strip() == str(request.user.national_id).strip() and pdf_name == os.path.basename(found_pdf_path.strip()).lower():
+                    foundpdf_path = os.path.join(BASE_DIR, found_pdf_path.strip())
+                    if os.path.isfile(foundpdf_path):
+                        print(":foundpdf_path", foundpdf_path)
+                        response = FileResponse(open(foundpdf_path, 'rb'), content_type='application/pdf')
                         return response
 
     except FileNotFoundError:
@@ -338,27 +343,28 @@ def open_pdf(request, category_name, pdf_name):
 
     return HttpResponse("Invalid PDF request", status=400)
 
+
+
+
 @login_required
 def download_pdf(request, category_name, pdf_name):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     pdf_path = os.path.join(BASE_DIR,"SystemDoc", f"{category_name}.txt")
-
     try:
         with open(pdf_path, 'r') as file:
             lines = file.readlines()
 
             for line in lines:
                 national_id, found_pdf_path = line.strip().split(',')
-                if (
-                    national_id.strip() == str(request.user.national_id).strip() and
-                    pdf_name.lower() == os.path.basename(found_pdf_path.strip()).lower()
-                ):
-                    if os.path.isfile(found_pdf_path.strip()):
-                        response = FileResponse(open(found_pdf_path.strip(), 'rb'), content_type='application/pdf')
+                if national_id.strip() == str(request.user.national_id).strip() and pdf_name == os.path.basename(found_pdf_path.strip()).lower():
+                    foundpdf_path = os.path.join(BASE_DIR, found_pdf_path.strip())
+                    if os.path.isfile(foundpdf_path):
+                        print(":foundpdf_path", foundpdf_path)
+                        response = FileResponse(open(foundpdf_path, 'rb'), content_type='application/pdf')
                         response['Content-Disposition'] = f'attachment; filename="{smart_str(pdf_name)}"'
                         return response
     except FileNotFoundError:
-        pass  
+        pass
 
     return HttpResponse("Invalid PDF request", status=400)
 
