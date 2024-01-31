@@ -1,0 +1,5 @@
+Maria Ahmad Abdalsalam Abu Samoor,408198356,12/6/2002,Ahmad,Abdalsalam,Abu Samoor,Fatima,Palestinian,Femal,Hebron
+Deena Amer Taha Seaydahmad,407571504,10/1/2002,Amer,Taha,SeadAhmad,Zeenat,Palestinian,Femal,Hebron
+Nour Amer Taha Sayedahmad,423713189,5/24/2006,Amer,Taha,Sayedahmad,Zeenat,Palestinian,Male,Hebron
+NourAldeen Ahmad Mahmoud Alamleh,451703300,5/1/1971,Ahmad,Mahmoud,Alamleh,Fahima,Palestinian,Male,Hebron
+Haya NourAldeen Ahmad Alamleh,408646495,8/1/2002,NourAldeen,Ahmad,Alamleh,Alia,Palestinian,Femal,Hebron
