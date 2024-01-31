@@ -28,11 +28,11 @@ AUTH_USER_MODEL = 'DocOrgnizer.UserProfile'
 SECRET_KEY = "django-insecure-&qtxc=-s+mn8&li909c%7hf79i!_g*)h^6pos=ogk+2w@$sl!g"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'True'
+DEBUG = 'False'
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['Maria-Samoor.github.io']
 
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 AUTHENTICATION_BACKENDS = [
@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django_auto_logout.middleware.auto_logout',
     'axes.middleware.AxesMiddleware',
     'csp.middleware.CSPMiddleware',
-
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 
