@@ -30,9 +30,10 @@ SECRET_KEY = "django-insecure-&qtxc=-s+mn8&li909c%7hf79i!_g*)h^6pos=ogk+2w@$sl!g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'False'
 
-ALLOWED_HOSTS = ['maria-samoor.github.io']
+ALLOWED_HOSTS = []
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+SSTATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 
 AUTHENTICATION_BACKENDS = [
