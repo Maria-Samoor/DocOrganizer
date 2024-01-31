@@ -14,7 +14,7 @@ django-bootstrap-modal-forms==3.0.4
 django-bootstrap3==23.4
 django-crispy-forms==2.1
 django-csp==3.7
-django-dbbackup==4.0.2
+django-dbbackup==4.1.0
 django-easysettings==2.0.1
 django-forms-bootstrap==3.1.0
 django-password-policies==0.4.2
