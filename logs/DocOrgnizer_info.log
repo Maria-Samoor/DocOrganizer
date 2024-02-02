@@ -1,2 +1,20 @@
 INFO 2024-01-31 16:47:12,311 django.utils.autoreload MainThread 1468 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8056 Watching for file changes with StatReloader
 
+INFO 2024-01-31 21:18:32,089 django.utils.autoreload MainThread 14792 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 14768 Watching for file changes with StatReloader
+INFO 2024-01-31 21:18:35,459 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "GET / HTTP/1.1" 200 4977
+INFO 2024-01-31 21:18:37,237 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "GET /login/ HTTP/1.1" 200 6741
+INFO 2024-01-31 21:18:45,920 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-01-31 21:18:45,958 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "GET /useraccount/systemcategories/ HTTP/1.1" 200 11490
+INFO 2024-01-31 21:18:45,968 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "GET /static/image/flag.jpeg HTTP/1.1" 304 0
+INFO 2024-01-31 21:18:47,289 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "GET /useraccount/protectedcategory/Passport/ HTTP/1.1" 200 5972
+INFO 2024-01-31 21:18:51,323 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "POST /useraccount/protectedcategory/Passport/ HTTP/1.1" 302 0
+INFO 2024-01-31 21:18:51,356 django.server Thread-1 (process_request_thread) 21168 basehttp basehttp.py 212 django.server log_message 14768 "GET /useraccount/document/Passport/ HTTP/1.1" 200 5499
+INFO 2024-02-02 14:18:23,976 django.utils.autoreload MainThread 14792 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14768 C:\Users\Raghad-windows\Desktop\dev\SysDoc2\SysDoc2\DocOrgnizerMaria\settings.py changed, reloading.
+INFO 2024-02-02 14:18:25,164 django.utils.autoreload MainThread 2160 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 32800 Watching for file changes with StatReloader
+INFO 2024-02-02 14:18:30,436 django.server Thread-1 (process_request_thread) 20032 basehttp basehttp.py 212 django.server log_message 32800 "GET /useraccount/document/Passport/ HTTP/1.1" 302 0
+INFO 2024-02-02 14:18:30,494 django.server Thread-1 (process_request_thread) 20032 basehttp basehttp.py 212 django.server log_message 32800 "GET /login/?next=/useraccount/document/Passport/ HTTP/1.1" 200 6873
+INFO 2024-02-02 14:18:30,568 django.server Thread-1 (process_request_thread) 20032 basehttp basehttp.py 212 django.server log_message 32800 "GET /static/image/logo.png HTTP/1.1" 200 12012
+INFO 2024-02-02 14:18:30,582 django.server Thread-2 (process_request_thread) 31704 basehttp basehttp.py 212 django.server log_message 32800 "GET /static/image/background.png HTTP/1.1" 200 176313
+INFO 2024-02-02 14:18:32,806 django.server Thread-2 (process_request_thread) 31704 basehttp basehttp.py 212 django.server log_message 32800 "GET /faq/ HTTP/1.1" 200 11512
+INFO 2024-02-02 14:18:47,048 django.utils.autoreload MainThread 2160 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 32800 C:\Users\Raghad-windows\Desktop\dev\SysDoc2\SysDoc2\DocOrgnizerMaria\settings.py changed, reloading.
+INFO 2024-02-02 14:18:47,808 django.utils.autoreload MainThread 10512 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 28764 Watching for file changes with StatReloader

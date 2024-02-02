@@ -109,7 +109,7 @@ def change_password(request):
     return render(request, 'user/update-password.html', {'form': form})
 
 import uuid
-
+@login_required
 def change_email(request):
     new_email = None
     if request.method == 'POST':
