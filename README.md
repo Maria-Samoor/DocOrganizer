@@ -26,8 +26,8 @@ The primary goal of DocOrganizer is to provide a reliable and secure platform fo
 
 ## System Requirements
 
-- Python 3.x
-- Django 3.x or higher
+- Python 3.9
+- Django 4.0 or higher
 - Bulma CSS framework
 - SQLite (default) or any other compatible database
 - Required Python libraries (specified in `requirements.txt`)
